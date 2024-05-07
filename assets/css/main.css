@@ -1,0 +1,284 @@
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/kanit-v12-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('../fonts/kanit-v12-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* kanit-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Kanit';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/kanit-v12-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('../fonts/kanit-v12-latin-700.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+/* maitree-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Maitree';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/maitree-v10-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('../fonts/maitree-v10-latin-regular.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* maitree-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Maitree';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/maitree-v10-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+ */
+       url('../fonts/maitree-v10-latin-700.woff') format('woff'); /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html {
+  @apply font-body;
+  scroll-behavior: smooth;
+}
+
+:where(section) {
+  @apply py-16 relative max-w-full;
+}
+
+:where(footer) {
+  .footer-menu {
+    h4 {
+      @apply text-3xl font-display uppercase mb-4
+    }
+
+    li {
+      a {
+        @apply py-1 block
+      }
+      
+    }
+  }
+}
+
+.container {
+  @apply px-6;
+}
+
+.hexagon-bg {
+  width: 60px;
+  height: 37px;
+  margin-top: 15px;
+  background: currentColor;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 15px solid currentColor;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 15px solid currentColor;
+  }
+}
+
+.clip-hexagon {
+  padding: 0.45rem;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+
+  > div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+  }
+}
+
+div[class^='has-clip-shape'], div[class*=' has-clip-shape'] {
+  @apply relative after:content-DEFAULT before:content-DEFAULT;
+
+  img {
+    mask-mode: alpha;
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    mask-border: 2px solid gray;
+  }
+
+  &::before,
+  &::after {
+    @apply absolute rounded-full;
+  }
+}
+
+:where(.main-bg-gradient) {
+  background: #4c6ca8;
+  background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top, rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg, #112034 0%, #0C131C 100%);
+  background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg, #112034 0%,#0C131C 100%);
+  background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg, #112034 0%,#0C131C 100%);
+  background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg, #112034 0%,#0C131C 100%);
+  background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg, #112034 0%,#0C131C 100%);
+}
+
+[data-invalid='true']:not([data-type='repeater']) input {
+  @apply border-danger-500
+}
+
+.prose .not-prose * {
+  margin-top: unset;
+  margin-bottom: unset;
+}
+
+:where(.arrow-link) {
+  &::before {
+    @apply mr-2 transition-all duration-300 ease-in-out inline-block;
+    content: '→';
+  }
+
+  &:hover {
+    &::before {
+      @apply mr-3;
+    }
+  }
+}
+
+:root {
+  --scrollbar-width: 0px;
+  --modal-overlay-background-color: hsla(210, 84%, 5%, 0.9);
+  --modal-background-color: white;
+}
+
+dialog {
+  article {
+
+    > header,
+    > footer,
+    > .content {
+      padding: var(--size-8);
+    }
+
+    > footer {
+      text-align: right;
+
+      [role='button'] {
+        margin-bottom: 0;
+
+        &:not(:first-of-type) {
+          margin-left: calc(var(--size-3) * 0.5);
+        }
+      }
+    }
+
+    p {
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+
+  &:not([open]),
+  &[open='false'] {
+    display: none;
+  }
+}
+
+.close {
+
+  &:before, 
+  &:after {
+    position: absolute;
+    content: ' ';
+    height: 1.5rem;
+    width: 2px;
+    background-color: currentColor;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+/* input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='password'],
+textarea,
+select {
+  @apply bg-white border rounded-lg outline-none w-full py-2.5 px-4 block md: bg-gray-50 text-gray-800;
+}
+
+label {
+  @apply text-xs mb-1.5 inline-block uppercase block;
+} */
+
+.mouse-follow {
+  @media (min-width: 1025px) {
+    transform-style: preserve-3d;
+    transform: perspective(5000px) rotateY(var(--rotateX)) rotateX(var(--rotateY));
+  }
+}
+
+:where(.btn) {
+  @apply inline-block text-white py-3 px-6 transition bg-gray-900 !no-underline cursor-pointer hover:bg-gray-800;
+
+  &.btn-icon {
+    @apply flex gap-2 items-center justify-center;
+  }
+
+  &.btn-primary {
+    @apply bg-primary hover:bg-primary-hover text-primary-inverse;
+  }
+
+  &.btn-secondary {
+    @apply bg-secondary hover:bg-secondary-hover text-secondary-inverse;
+  }
+
+  &.btn-tertiary {
+    @apply bg-tertiary hover:bg-tertiary-hover text-tertiary-inverse;
+  }
+
+  &.btn-outlined {
+    @aplly bg-transparent;
+
+    &.btn-primary {
+      @apply border border-primary text-primary hover:bg-primary hover:text-primary-inverse;
+    }
+
+    &.btn-secondary {
+      @apply bg-transparent border border-secondary text-secondary hover:bg-secondary hover:text-secondary-inverse;
+    }
+
+    &.btn-white {
+      @apply bg-transparent border border-white text-white hover:bg-white hover:text-primary-900;
+    }
+  }
+
+  &.btn-large {
+    @apply text-lg py-4 px-8;
+  }
+}

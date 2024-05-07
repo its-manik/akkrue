@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "dev-host": "nuxt dev --host",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/fontaine": "^0.4.1",
+    "@unocss/nuxt": "^0.55.7",
+    "nuxt": "^3.7.1",
+    "nuxt-gtag": "^1.1.1",
+    "nuxt-icon": "^0.5.0",
+    "postcss-nested": "^6.0.1"
+  },
+  "dependencies": {
+    "@formkit/icons": "^1.2.2",
+    "@formkit/nuxt": "^1.2.2",
+    "@nuxt/image": "1.0.0-rc.1",
+    "nodemailer": "^6.9.5",
+    "validator": "^13.11.0"
+  }
+}

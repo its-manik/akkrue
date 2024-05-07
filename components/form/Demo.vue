@@ -1,0 +1,10 @@
+<template>
+  <div>
+    <iframe
+      class="w-full"
+      height="580"
+      src="https://app.pipefy.com/public/form/sXkUHxYM?embedded=true"
+      frameborder="0"
+    ></iframe>
+  </div>
+</template>
